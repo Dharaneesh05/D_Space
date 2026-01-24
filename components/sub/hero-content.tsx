@@ -25,7 +25,7 @@ export const HeroContent = () => {
             variants={slideInFromLeft(0.3)}
             className="text-2xl md:text-3xl text-white font-semibold"
           >
-          Hi, I'm
+          Hi, I&apos;m
           </motion.div>
 
           <motion.div

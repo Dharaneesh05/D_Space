@@ -145,7 +145,7 @@ export const About = () => {
                 }}
                 className="text-lg text-gray-300 leading-relaxed md:leading-relaxed text-justify line-height: 1.6–1.7 max-width: 520–560px"
               >
-                I am a MERN Stack and AI Developer who enjoys building clean, scalable, and user-focused web applications with an emphasis on thoughtful UI, reliable backend logic, and maintainable code.I'm sharpen my skills through hands-on projects and real-world experimentation, with a growing interest in integrating AI-driven ideas into modern web applications to create practical, high-impact digital experiences.
+                I am a MERN Stack and AI Developer who enjoys building clean, scalable, and user-focused web applications with an emphasis on thoughtful UI, reliable backend logic, and maintainable code.I&apos;m sharpen my skills through hands-on projects and real-world experimentation, with a growing interest in integrating AI-driven ideas into modern web applications to create practical, high-impact digital experiences.
               </motion.p>
             </div>
             </motion.div>
