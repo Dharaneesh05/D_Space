@@ -66,3 +66,13 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Orbit animation for skills section */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 40s linear infinite;
+}

@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
 
 export const siteConfig: Metadata = {
-  title: "John Doe | Space Portfolio",
+  title: "Portfolio",
   description: "Welcome to my full stack Next.js 14 space portfolio.",
+  icons: {
+    icon: [
+      { url: "/favicon.png", sizes: "256x256", type: "image/png" },
+      { url: "/favicon.png", sizes: "128x128", type: "image/png" },
+      { url: "/favicon.png", sizes: "64x64", type: "image/png" },
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: { url: "/favicon.png", sizes: "256x256", type: "image/png" },
+    shortcut: "/favicon.png",
+  },
   keywords: [
     "reactjs",
     "nextjs",

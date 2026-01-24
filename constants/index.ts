@@ -259,25 +259,76 @@ export const OTHER_SKILL = [
 
 export const PROJECTS = [
   {
-    title: "Modern Next.js 14 Portfolio",
+    id: 1,
+    title: "Resume Analyzer & Builder",
     description:
-      'Embark on a journey through my professional evolution with the "Modern Next.js Portfolio" - a dynamic showcase of my skills, experiences, and passion for web development. Crafted with precision and powered by Next.js, this portfolio is more than just a static display; it\'s an immersive experience that reflects the cutting edge of modern web technologies.',
-    image: "/projects/project-1.png",
-    link: "https://example.com",
+      "A comprehensive AI-powered platform for resume analysis and intelligent resume building. It delivers ATS scoring, predictive insights, and personalized job suggestions based on user profiles.",
+    fullDescription:
+      "A comprehensive AI-powered platform for resume analysis and intelligent resume building. It delivers ATS scoring, predictive insights, and personalized job suggestions based on user profiles. Integrated analytics and job search features provide actionable guidance for career growth.",
+    image: "/resume-analyzer.png",
+    tech: ["React", "Node.js", "Python", "TensorFlow", "MongoDB", "Express"],
+    demo: "https://resume-frontend3.vercel.app/",
+    github: "https://github.com/Dharaneesh05/Resume-Analyzer-Builder",
   },
   {
-    title: "Interactive Cards Portfolio",
+    id: 2,
+    title: "Personal Portfolio Website",
     description:
-      'Step into the extraordinary world of my professional journey through the "Interactive Cards Portfolio" - an innovative and visually captivating platform that redefines the traditional portfolio experience. Ditching the conventional static layout, this portfolio leverages interactive cards to showcase my skills, projects, and personality in an engaging and dynamic manner.',
-    image: "/projects/project-2.png",
-    link: "https://example.com",
+      "A full-stack portfolio showcasing projects and skills with an AI-powered chatbot for interactive user engagement. Features dynamic content rendering, theme switching, and seamless navigation.",
+    fullDescription:
+      "A full-stack portfolio showcasing projects and skills with an AI-powered chatbot for interactive user engagement. Features dynamic content rendering, theme switching, and seamless navigation for a responsive, modern experience.",
+    image: "/portfolio.png",
+    tech: ["Next.js", "React", "Node.js", "MongoDB", "Tailwind CSS"],
+    demo: "https://portfolio-3tk8.vercel.app/",
+    github: "https://github.com/Dharaneesh05/PortVia",
   },
   {
-    title: "Space Themed Website",
+    id: 3,
+    title: "SmartFit",
     description:
-      'Embark on an interstellar journey with my "Space Themed Website", a mesmerizing space-themed website that invites you to explore the cosmic wonders beyond our world. Immerse yourself in an awe-inspiring digital experience that blends cutting-edge design with the mysteries of the universe.',
-    image: "/projects/project-3.png",
-    link: "https://example.com",
+      "An AI-powered fit recommendation system that reduces online shopping returns by analyzing body measurements and user queries. Leverages computer vision and NLP to deliver personalized sizing insights.",
+    fullDescription:
+      "An AI-powered fit recommendation system that reduces online shopping returns by analyzing body measurements and user queries. Leverages computer vision and NLP to deliver personalized sizing insights, improving fit accuracy by up to 30%.",
+    image: "/Smartfit.png",
+    tech: ["Python", "Flask", "NLP", "YOLO", "OpenCV", "MediaPipe"],
+    demo: "https://smartfitdeploy2-1.onrender.com/",
+    github: "https://github.com/Dharaneesh05/SmartFit",
+  },
+  {
+    id: 4,
+    title: "PitchPoint",
+    description:
+      "A data-driven analytics platform for evaluating Test cricket performance using the Duckworth–Lewis method. Delivers real-time insights, predictive impact analysis, and interactive visualizations.",
+    fullDescription:
+      "A data-driven analytics platform for evaluating Test cricket performance using the Duckworth–Lewis method. Delivers real-time insights, predictive impact analysis, and interactive visualizations through a responsive, scalable architecture.",
+    image: "/pitchpoint.png",
+    tech: ["React", "Node.js", "MongoDB", "Data Analytics", "Statistical Modeling", "Interactive Charts"],
+    demo: "https://pitch-point-eight.vercel.app/",
+    github: "https://github.com/Dharaneesh05/PitchPoint",
+  },
+  {
+    id: 5,
+    title: "CineFellas",
+    description:
+      "A full-stack movie recommendation platform delivering mood-based and multilingual suggestions across 10 genres. Leverages AI-driven content analysis with an intuitive UI to personalize discovery.",
+    fullDescription:
+      "A full-stack movie recommendation platform delivering mood-based and multilingual suggestions across 10 genres. Leverages AI-driven content analysis with an intuitive UI to personalize discovery and enhance user engagement.",
+    image: "/cinefellas.png",
+    tech: ["React", "Node.js", "Multilingual Support", "Content Analysis"],
+    demo: "https://movierecommend.vercel.app/",
+    github: "https://github.com/Dharaneesh05/Movie-Recommendation-System-",
+  },
+  {
+    id: 6,
+    title: "House Design Recommendation System",
+    description:
+      "An AI-driven platform for intelligent house planning with interactive 3D interior and exterior visualizations. Combines real-location mapping and user preferences to deliver personalized design recommendations.",
+    fullDescription:
+      "An AI-driven platform for intelligent house planning with interactive 3D interior and exterior visualizations. Combines real-location mapping and user preferences to deliver personalized design recommendations and immersive models.",
+    image: "/house.png",
+    tech: ["Python", "Firebase", "Blender", "GeoPy", "3D Visualization"],
+    demo: "https://virtualhome.vercel.app/",
+    github: "https://github.com/Dharaneesh05/3D-House-Design-Recommendation-System.git",
   },
 ] as const;
 
@@ -356,6 +407,14 @@ export const NAV_LINKS = [
   {
     title: "Projects",
     link: "#projects",
+  },
+  {
+    title: "Experience",
+    link: "#experience",
+  },
+  {
+    title: "Contact",
+    link: "#contact",
   },
 ] as const;
 
