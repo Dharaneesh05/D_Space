@@ -6,37 +6,32 @@ import { SkillText } from "@/components/sub/skill-text";
 
 // Organized skill categories without duplicates - with color glow
 const FRONTEND_SKILLS = [
-  { skill_name: "HTML5", image: "html.png", width: 56, height: 56, color: "227,76,38" }, // HTML orange
-  { skill_name: "CSS3", image: "css.png", width: 56, height: 56, color: "38,77,228" }, // CSS blue
+  { skill_name: "HTML", image: "html.png", width: 56, height: 56, color: "227,76,38" }, // HTML orange
+  { skill_name: "Tailwind CSS", image: "tailwind.png", width: 56, height: 56, color: "56,189,248" }, // Tailwind blue
   { skill_name: "JavaScript", image: "js.png", width: 56, height: 56, color: "247,223,30" }, // JS yellow
   { skill_name: "TypeScript", image: "ts.png", width: 56, height: 56, color: "49,120,198" }, // TS blue
   { skill_name: "React", image: "react.png", width: 56, height: 56, color: "97,218,251" }, // React cyan
   { skill_name: "Next.js", image: "next.png", width: 56, height: 56, color: "255,255,255" }, // Next white
-  { skill_name: "Tailwind CSS", image: "tailwind.png", width: 56, height: 56, color: "56,189,248" }, // Tailwind blue
-  { skill_name: "Redux", image: "redux.png", width: 56, height: 56, color: "118,74,188" }, // Redux purple
+  
 ];
 
 const BACKEND_SKILLS = [
   { skill_name: "Node.js", image: "node.png", width: 56, height: 56, color: "102,159,99" }, // Node green
   { skill_name: "Express.js", image: "express.png", width: 56, height: 56, color: "255,255,255" }, // Express white
   { skill_name: "MongoDB", image: "mongodb.png", width: 56, height: 56, color: "67,153,52" }, // Mongo green
-  { skill_name: "PostgreSQL", image: "postgresql.png", width: 56, height: 56, color: "51,103,145" }, // Postgres blue
   { skill_name: "Firebase", image: "firebase.png", width: 56, height: 56, color: "255,202,40" }, // Firebase yellow
+  { skill_name: "MySQL", image: "mysql.png", width: 56, height: 56, color: "0,117,143" }, // MySQL blue
 ];
 
 const TOOLS_SKILLS = [
+  { skill_name: "Git", image: "git.png", width: 56, height: 56, color: "240,80,50" }, // Git orange-red
   { skill_name: "Docker", image: "docker.png", width: 56, height: 56, color: "33,150,243" }, // Docker blue
-  { skill_name: "Figma", image: "figma.png", width: 56, height: 56, color: "242,78,30" }, // Figma orange
-  { skill_name: "MySQL", image: "mysql.png", width: 56, height: 56, color: "0,117,143" }, // MySQL blue
-  { skill_name: "Prisma", image: "prisma.png", width: 56, height: 56, color: "93,230,226" }, // Prisma cyan
-  { skill_name: "GraphQL", image: "graphql.png", width: 56, height: 56, color: "225,0,152" }, // GraphQL pink
-  { skill_name: "Stripe", image: "stripe.png", width: 56, height: 56, color: "99,91,255" }, // Stripe purple
+  { skill_name: "Power BI", image: "powerbi.png", width: 56, height: 56, color: "242,196,50" }, // Power BI yellow
 ];
 
 const EXPLORING_SKILLS = [
-  { skill_name: "GraphQL (Advanced)", image: "graphql.png", width: 56, height: 56, color: "225,0,152" },
-  { skill_name: "Go (Golang)", image: "go.png", width: 56, height: 56, color: "0,173,216" }, // Go cyan
   { skill_name: "Framer Motion", image: "framer.png", width: 56, height: 56, color: "168,85,247" }, // Framer purple
+  { skill_name: "Go", image: "go.png", width: 56, height: 56, color: "0,173,216" }, // Go cyan
 ];
 
 export const Skills = () => {

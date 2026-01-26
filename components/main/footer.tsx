@@ -1,38 +1,46 @@
 import Link from "next/link";
 
-import { FOOTER_DATA } from "@/constants";
-
 export const Footer = () => {
+  const footerLinks = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about-me" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+
   return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px]">
-      <div className="w-full flex flex-col items-center justify-center m-auto">
-        <div className="w-full h-full flex flex-row items-center justify-around flex-wrap">
-          {FOOTER_DATA.map((column) => (
-            <div
-              key={column.title}
-              className="min-w-[200px] h-auto flex flex-col items-center justify-start"
+    <footer className="w-full backdrop-blur-md bg-[#03001417] bg-transparent
+     text-white relative pt-48 pb-6 mt-[-100px] overflow-hidden">
+      {/* Black Hole Video Background - Bottom half only, positioned under navigation */}
+      <video
+        autoPlay
+        muted
+        loop
+        className="absolute top-0 left-0 w-full h-[100vh] object-cover -z-10 opacity-80"
+      >
+        <source src="/videos/blackhole.webm" type="video/webm" />
+      </video>
+      
+      <div className="max-w-7xl mx-auto px-5 relative z-10">
+        {/* Separator Line */}
+        <div className="w-full h-px bg-white/10 mb-6" />
+        
+        {/* Navigation Links */}
+        <div className="flex flex-wrap justify-center gap-12 md:gap-16">
+          {footerLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-gray-400 hover:text-white text-lg font-semibold uppercase tracking-wider transition-colors duration-300"
             >
-              <h3 className="font-bold text-[16px]">{column.title}</h3>
-              {column.data.map(({ icon: Icon, name, link }) => (
-                <Link
-                  key={`${column.title}-${name}`}
-                  href={link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="flex flex-row items-center my-[15px]"
-                >
-                  {Icon && <Icon />}
-                  <span className="text-[15px] ml-[6px]">{name}</span>
-                </Link>
-              ))}
-            </div>
+              {link.name}
+            </Link>
           ))}
         </div>
-
-        <div className="mb-[20px] text-[15px] text-center">
-          &copy; John Doe {new Date().getFullYear()} Inc. All rights reserved.
-        </div>
       </div>
-    </div>
+    </footer>
   );
 };

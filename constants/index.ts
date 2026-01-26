@@ -395,6 +395,72 @@ export const FOOTER_DATA = [
   },
 ] as const;
 
+export const EXPERIENCE_DATA = [
+  {
+    id: 1,
+    role: "Full Stack Developer Intern",
+    company: "TechNest",
+    period: "Jan 2024 - Apr 2024",
+    type: "Internship",
+    description:
+      "Developed web applications using React and Node.js, collaborated with senior developers on enterprise projects, and implemented RESTful APIs.",
+    skills: ["React", "Node.js", "MongoDB", "API Development"],
+  },
+  {
+    id: 2,
+    role: "AI Developer Intern",
+    company: "DevNest",
+    period: "Aug 2025 - Sep 2025",
+    type: "Internship",
+    description:
+      "Worked on machine learning projects, implemented AI models for data analysis and prediction, and contributed to research initiatives.",
+    skills: ["Python", "TensorFlow", "Machine Learning", "Data Analysis"],
+  },
+] as const;
+
+export const CERTIFICATIONS = [
+  {
+    id: 1,
+    title: "MongoDB Certified Developer",
+    issuer: "MongoDB University",
+    date: "May 2025",
+    certificateUrl: "/mongodb.pdf",
+  },
+  {
+    id: 2,
+    title: "NVIDIA AI Fundamentals",
+    issuer: "NVIDIA Deep Learning Institute",
+    date: "Oct 2025",
+    certificateUrl: "/nvidia.pdf",
+  },
+  {
+    id: 3,
+    title: "Oracle APEX Cloud Developer",
+    issuer: "Oracle University",
+    date: "May 2025",
+    certificateUrl: "/oracle.pdf",
+  },
+] as const;
+
+export const ACHIEVEMENTS = [
+  {
+    id: 1,
+    title: "TechnoFest – FirstPrize(POC)",
+    category: "AI / ML Category",
+    description: "Developed practical experience in model logic, data flow, and translating user requirements into scalable AI-driven solutions.",
+    date: "Aug 2025",
+    certificateUrl: "/POC.pdf",
+  },
+  {
+    id: 2,
+    title: "BYTS Hackathon – Best Implementation",
+    category: "",
+    description: "Recognized for strong technical execution, system design, and real-world feasibility.",
+    date: "Apr 2025",
+    certificateUrl: "/Byts.pdf",
+  },
+] as const;
+
 export const NAV_LINKS = [
   {
     title: "About me",
