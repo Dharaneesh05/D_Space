@@ -2,9 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import { RxGithubLogo } from "react-icons/rx";
-import { HiExternalLink } from "react-icons/hi";
 
 import { slideInFromTop } from "@/lib/motion";
 import { OrbitalProjectCard } from "@/components/sub/orbital-project-card";
@@ -192,20 +189,6 @@ export const Encryption = () => {
             aria-label={`Go to project ${index + 1}`}
           />
         ))}
-      </div>
-
-      {/* Background Video */}
-      <div className="w-full h-full flex items-start justify-center absolute z-[5] top-[-60px]">
-        <video
-          loop
-          muted
-          autoPlay
-          playsInline
-          preload="false"
-          className="w-full h-full object-cover opacity-30"
-        >
-          <source src="/videos/encryption-bg.webm" type="video/webm" />
-        </video>
       </div>
     </div>
   );

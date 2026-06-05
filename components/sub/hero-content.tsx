@@ -1,112 +1,144 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { slideInFromTop } from "@/lib/motion";
 
-import {
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
-} from "@/lib/motion";
+/* ── Roles that cycle beneath the name ─────────────────────────────── */
+const ROLES = [
+  "Full-Stack Developer",
+  "AI Developer",
+  "MERN Stack Developer",
+  "Machine Learning Enthusiast",
+  "Data Analytics Practitioner",
+];
+
+/* ── Fade-only animation variants ──────────────────────────────────── */
+const fadeUp = {
+  hidden: { opacity: 0, y: 18 },
+  visible: (delay: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1], delay },
+  }),
+};
 
 export const HeroContent = () => {
   const [showPDF, setShowPDF] = useState(false);
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % ROLES.length);
+    }, 2600);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        className="flex flex-col md:flex-row items-center justify-between px-5 md:px-20 mt-16 md:mt-20 w-full z-[20] gap-6 md:gap-8"
-      >
-        <div className="h-full w-full md:w-auto flex flex-col gap-3 md:gap-4 justify-center text-start">
-          <motion.div
-            variants={slideInFromLeft(0.3)}
-            className="text-2xl md:text-3xl text-white font-semibold"
-          >
-          Hi, I&apos;m
-          </motion.div>
+      {/* ── Hero Shell ─────────────────────────────────────────────── */}
+      <section className="relative w-full min-h-[calc(100vh-65px)] flex items-center justify-center px-5">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col items-center justify-center text-center w-full max-w-3xl gap-0 py-16 pt-24"
+        >
 
-          <motion.div
-            variants={slideInFromLeft(0.5)}
-            className="text-3xl md:text-7xl font-extrabold max-w-[900px] w-auto h-auto leading-tight"
-          >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400">
-              Dharaneesh C
-            </span>
-          </motion.div>
-
-          <motion.div
-            variants={slideInFromTop}
-            className="Welcome-box py-2 md:py-3 px-4 md:px-5 border-2 border-[#7042f88b] opacity-[0.9] inline-block rounded-lg backdrop-blur-sm w-fit"
-          >
-            <span className="Welcome-text text-xs md:text-xl font-bold text-white text-center">
-              <div className="md:hidden">
-                <div>MERN Developer</div>
-                <div>AI Enthusiast</div>
-              </div>
-              <div className="hidden md:block">
-                MERN Stack Developer | AI Enthusiast
-              </div>
-            </span>
-          </motion.div>
-
+          {/* 1 ▸ I'M label */}
           <motion.p
-            variants={slideInFromLeft(0.7)}
-            className="text-base md:text-lg text-gray-300 max-w-[600px] font-medium leading-relaxed"
+            variants={fadeUp}
+            custom={0}
+            className="text-[#52525B] font-extrabold tracking-[0.4em] uppercase mb-4"
+            style={{ fontSize: "clamp(1.4rem, 2.5vw, 2.2rem)" }}
           >
-           Building modern web experiences with purpose and precision.
+            I&apos;M
           </motion.p>
 
-          <motion.div
-            variants={slideInFromLeft(0.9)}
-            className="flex flex-col sm:flex-row gap-3 md:gap-4 mt-2"
+          {/* 2 ▸ Name */}
+          <motion.h1
+            variants={fadeUp}
+            custom={0.1}
+            className="font-extrabold text-[#FAFAFA] leading-none tracking-tight mb-8 whitespace-nowrap"
+            style={{ fontSize: "clamp(2.8rem, 8vw, 6.5rem)" }}
           >
+            Dharaneesh C
+          </motion.h1>
+
+          {/* 3 ▸ Tagline / Description */}
+          <motion.div
+            variants={fadeUp}
+            custom={0.2}
+            className="flex flex-col gap-2 mb-8"
+          >
+            <p className="text-[#A1A1AA] font-normal leading-relaxed max-w-[650px] mx-auto" style={{ fontSize: "clamp(1.1rem, 1.5vw, 1.5rem)" }}>
+              Building modern web experiences with purpose and precision.
+            </p>
+            <p className="text-[#A1A1AA] font-normal leading-relaxed max-w-[650px] mx-auto" style={{ fontSize: "clamp(1.1rem, 1.5vw, 1.5rem)" }}>
+              Focused on creating scalable, intelligent, and user-centric digital solutions.
+            </p>
+          </motion.div>
+
+          {/* 4 ▸ Animated Role Rotator */}
+          <motion.div
+            variants={fadeUp}
+            custom={0.3}
+            className="mb-12"
+            style={{ height: "clamp(2rem, 3vw, 2.5rem)" }}
+          >
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={roleIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="block font-bold text-[#D4D4D8]"
+                style={{ fontSize: "clamp(1.3rem, 2vw, 2rem)" }}
+              >
+                {ROLES[roleIndex]}
+              </motion.span>
+            </AnimatePresence>
+          </motion.div>
+
+          {/* 5 ▸ CTA Buttons */}
+          <motion.div
+            variants={fadeUp}
+            custom={0.4}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            {/* Primary — View Resume */}
             <button
               onClick={() => setShowPDF(true)}
-              className="py-3 md:py-3 px-8 md:px-8 button-primary text-center text-white cursor-pointer rounded-lg bg-[#5b21b6] hover:bg-[#6d28d9] transition-all font-semibold shadow-lg hover:shadow-purple-500/50 text-base md:text-base"
+              className="py-3 px-8 button-primary text-center cursor-pointer rounded-lg font-semibold text-sm tracking-wide min-w-[160px]"
             >
               View Resume
             </button>
+
+            {/* Secondary — Get In Touch */}
             <a
-              href="/resume.pdf"
-              download="Dharaneesh_C_Resume.pdf"
-              className="py-3 md:py-3 px-8 md:px-8 button-primary text-center text-white cursor-pointer rounded-lg bg-[#5b21b6] hover:bg-[#6d28d9] transition-all font-semibold shadow-lg hover:shadow-purple-500/50 text-base md:text-base"
+              href="#contact"
+              className="py-3 px-8 text-center text-[#FAFAFA] cursor-pointer rounded-lg font-semibold text-sm tracking-wide border border-[#3F3F46] hover:border-[#52525B] hover:bg-white/[0.03] transition-all duration-200 min-w-[160px]"
             >
-              Download Resume
+              Get In Touch
             </a>
           </motion.div>
-        </div>
 
-        <motion.div
-          variants={slideInFromRight(0.8)}
-          className="hidden md:flex justify-center items-center"
-        >
-          <Image
-            src="/hero-bg.svg"
-            alt="work icons"
-            height={500}
-            width={450}
-            draggable={false}
-            className="select-none"
-          />
         </motion.div>
-      </motion.div>
+      </section>
 
-      {/* PDF Modal Popup */}
+      {/* ── PDF Modal ──────────────────────────────────────────────── */}
       {showPDF && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4"
           onClick={() => setShowPDF(false)}
         >
-          <div 
+          <div
             className="relative w-full max-w-5xl h-[90vh] bg-white rounded-lg overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setShowPDF(false)}
-              className="absolute top-4 right-4 z-10 bg-red-500 hover:bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-all font-bold text-xl"
+              className="absolute top-4 right-4 z-10 bg-[#18181B] hover:bg-[#27272A] border border-[#3F3F46] text-[#FAFAFA] rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-all font-bold text-xl"
               title="Close"
             >
               ✕

@@ -4,75 +4,157 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Design Tokens ─────────────────────────────────────────────────── */
+:root {
+  --bg-base:      #09090B;
+  --bg-card:      #18181B;
+  --border:       #3F3F46;
+  --text-main:    #FAFAFA;
+  --text-muted:   #D4D4D8;
+  --text-subtle:  #71717A;
+  --accent:       #D4D4D8;
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
 .cursive {
   font-family: "Cedarville Cursive", cursive;
 }
+
+/* ─── Welcome Badge (Hero) ───────────────────────────────────────────── */
 .Welcome-text {
-  background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.4)
-    ),
-    linear-gradient(90.01deg, #e59cff 0.01%, #ba9cff 50.01%, #9cb2ff 100%);
-  background-blend-mode: normal, screen;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #D4D4D8;
 }
+
 .Welcome-box {
   isolation: isolate;
   overflow: hidden;
   align-items: center;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  border-radius: 32px;
-  box-shadow: inset 0 -7px 11px #a48fff1f;
+  border-radius: 8px;
+  border: 1px solid #3F3F46;
+  background: #18181B;
   display: flex;
-
   position: relative;
-  width: -moz-max-content;
   width: max-content;
-  transition: 0.45s cubic-bezier(0.6, 0.6, 0, 1) box-shadow;
+  transition: border-color 0.25s ease;
 }
 
+.Welcome-box:hover {
+  border-color: #52525B;
+}
+
+/* ─── Primary Button ─────────────────────────────────────────────────── */
 .button-primary {
-  background: linear-gradient(
-      180deg,
-      rgba(60, 8, 126, 0) 0%,
-      rgba(60, 8, 126, 0.32) 100%
-    ),
-    rgba(113, 47, 255, 0.12);
-  box-shadow: inset 0 0 12px #bf97ff3d;
-}
-.button-primary:hover {
-  background: linear-gradient(
-      180deg,
-      rgba(60, 8, 126, 0) 0%,
-      rgba(60, 8, 126, 0.42) 100%
-    ),
-    rgba(113, 47, 255, 0.24);
-  box-shadow: inset 0 0 12px #bf97ff70;
+  background: #FAFAFA;
+  color: #09090B;
+  border: none;
+  transition: background 0.2s ease;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
+.button-primary:hover {
+  background: #E4E4E7;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────── */
 .scrollbar-hidden {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-/* Orbit animation for skills section */
+/* ─── Orbit animation for skills section ─────────────────────────────── */
 @keyframes spinSlow {
   from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  to   { transform: rotate(360deg); }
 }
 
 .animate-spin-slow {
   animation: spinSlow 40s linear infinite;
+}
+
+/* ─── Navbar — Subtle Glassmorphism ─────────────────────────────────── */
+.navbar-glass {
+  background: rgba(15, 15, 18, 0.65);
+  backdrop-filter: blur(32px) saturate(120%);
+  -webkit-backdrop-filter: blur(32px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+    0 12px 40px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+/* Top-edge glass highlight line */
+.navbar-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.00) 40%
+  );
+  pointer-events: none;
+}
+
+/* Nav link */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #A1A1AA;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: color 0.2s ease, transform 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-link:hover {
+  color: #FAFAFA;
+  transform: translateY(-2px);
+}
+
+/* ─── Rotating Role Text ─────────────────────────────────────────────── */
+@keyframes roleSlideUp {
+  0%   { opacity: 0; transform: translateY(14px); }
+  15%  { opacity: 1; transform: translateY(0); }
+  80%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-14px); }
+}
+
+.role-rotator {
+  display: inline-block;
+  overflow: hidden;
+  height: 1.6em;
+  vertical-align: bottom;
+}
+
+.role-item {
+  display: block;
+  animation: roleSlideUp 3s ease-in-out infinite;
+  letter-spacing: 0.12em;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+/* ─── Hover Sweep Effect ─────────────────────────────────────────────── */
+@keyframes sweep {
+  0% { transform: translateX(-150%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(150%); opacity: 0; }
+}
+
+.hover-sweep-card:hover .sweep-layer {
+  animation: sweep 1.2s ease-in-out forwards;
 }

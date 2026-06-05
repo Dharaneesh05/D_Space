@@ -23,7 +23,7 @@ export const Experience = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="text-4xl md:text-5xl font-bold text-white text-center mb-16 z-10"
+        className="text-4xl md:text-5xl font-bold text-[#FAFAFA] text-center mb-16 z-10"
       >
         Experience & Achievements
       </motion.div>
@@ -38,9 +38,9 @@ export const Experience = () => {
           className="relative flex"
         >
           {/* Container with border and rounded corners */}
-          <div className="border-l-4 border-purple-500 bg-white/5 rounded-2xl p-8 w-full h-full">
+          <div className="border-l-4 border-[#3F3F46] bg-[#18181B] border border-[#3F3F46] rounded-2xl p-8 w-full h-full">
             {/* Title */}
-            <h3 className="text-2xl font-bold text-white mb-8">
+            <h3 className="text-2xl font-bold text-[#FAFAFA] mb-8">
               Certifications
             </h3>
 
@@ -53,22 +53,22 @@ export const Experience = () => {
                 >
                   <div className="flex-1">
                     <div className="flex items-start gap-2 mb-1">
-                      <h4 className="text-lg font-bold text-white flex-1">
+                      <h4 className="text-lg font-semibold text-[#FAFAFA] flex-1">
                         {cert.title}
                       </h4>
                       <button
                         onClick={() => handleViewCertificate(cert.certificateUrl)}
-                        className="text-purple-400 hover:text-purple-300 transition-colors cursor-pointer flex-shrink-0 mt-1"
+                        className="text-[#71717A] hover:text-[#FAFAFA] transition-colors cursor-pointer flex-shrink-0 mt-1"
                         title="View Certificate"
                       >
                         <HiOutlineDocumentText className="text-xl" />
                       </button>
                     </div>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-[#D4D4D8] text-sm">
                       {cert.issuer}
                     </p>
                   </div>
-                  <span className="text-sm text-white bg-black px-5 py-2 rounded-full whitespace-nowrap">
+                  <span className="text-sm text-[#FAFAFA] bg-[#27272A] border border-[#3F3F46] px-4 py-1.5 rounded-full whitespace-nowrap">
                     {cert.date}
                   </span>
                 </div>
@@ -86,9 +86,9 @@ export const Experience = () => {
           className="relative flex"
         >
           {/* Container with border and rounded corners */}
-          <div className="border-l-4 border-cyan-500 bg-white/5 rounded-2xl p-8 w-full h-full">
+          <div className="border-l-4 border-[#52525B] bg-[#18181B] border border-[#3F3F46] rounded-2xl p-8 w-full h-full">
             {/* Title */}
-            <h3 className="text-2xl font-bold text-white mb-8">
+            <h3 className="text-2xl font-bold text-[#FAFAFA] mb-8">
               Achievements
             </h3>
 
@@ -101,13 +101,13 @@ export const Experience = () => {
                 >
                   <div className="flex-1">
                     <div className="flex items-start gap-2 mb-1">
-                      <h4 className="text-lg font-bold text-white flex-1">
+                      <h4 className="text-lg font-semibold text-[#FAFAFA] flex-1">
                         {achievement.title}
                       </h4>
                       {achievement.certificateUrl && (
                         <button
                           onClick={() => handleViewCertificate(achievement.certificateUrl)}
-                          className="text-cyan-400 hover:text-cyan-300 transition-colors cursor-pointer flex-shrink-0 mt-1"
+                          className="text-[#71717A] hover:text-[#FAFAFA] transition-colors cursor-pointer flex-shrink-0 mt-1"
                           title="View Certificate"
                         >
                           <HiOutlineDocumentText className="text-xl" />
@@ -115,15 +115,15 @@ export const Experience = () => {
                       )}
                     </div>
                     {achievement.category && (
-                      <p className="text-gray-400 text-sm mb-2">
+                      <p className="text-[#D4D4D8] text-sm mb-2">
                         {achievement.category}
                       </p>
                     )}
-                    <p className="text-gray-300 text-sm leading-relaxed">
+                    <p className="text-[#D4D4D8]/70 text-sm leading-relaxed">
                       {achievement.description}
                     </p>
                   </div>
-                  <span className="text-sm text-white bg-black px-5 py-2 rounded-full whitespace-nowrap">
+                  <span className="text-sm text-[#FAFAFA] bg-[#27272A] border border-[#3F3F46] px-4 py-1.5 rounded-full whitespace-nowrap">
                     {achievement.date}
                   </span>
                 </div>

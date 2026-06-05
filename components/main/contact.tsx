@@ -71,7 +71,7 @@ export const Contact = () => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
         viewport={{ once: true }}
-        className="text-3xl md:text-4xl font-extrabold text-white text-center mb-12"
+        className="text-3xl md:text-4xl font-extrabold text-[#FAFAFA] text-center mb-12"
       >
         Contact
       </motion.div>
@@ -89,11 +89,11 @@ export const Contact = () => {
           >
             {/* GET IN TOUCH */}
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase tracking-wide">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#FAFAFA] mb-4 uppercase tracking-wide">
                 GET IN TOUCH
               </h2>
               
-              <p className="text-gray-400 leading-relaxed text-base font-medium">
+              <p className="text-[#D4D4D8] leading-relaxed text-base font-normal">
                 Open to internships, full-time roles, freelance projects, and collaborations in Full-Stack and AI development. 
                 Let&apos;s build something impactful together.
               </p>
@@ -101,7 +101,7 @@ export const Contact = () => {
 
             {/* RECENT ACTIVITY */}
             <div className="mb-12">
-              <h3 className="text-lg font-bold text-purple-400 mb-4 uppercase tracking-wide">
+              <h3 className="text-xs font-semibold text-[#71717A] mb-4 uppercase tracking-widest">
                 Recent Activity
               </h3>
               <div className="flex flex-col gap-3">
@@ -112,9 +112,9 @@ export const Contact = () => {
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.4 + index * 0.1, duration: 0.4 }}
                     viewport={{ once: true }}
-                    className="flex items-start gap-3 text-gray-400 text-base font-medium group"
+                    className="flex items-start gap-3 text-[#D4D4D8] text-base font-normal group"
                   >
-                    <div className="w-2 h-2 rounded-full bg-purple-500 mt-1.5 group-hover:shadow-lg group-hover:shadow-purple-500/60 transition-all duration-300" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#3F3F46] mt-2 flex-shrink-0" />
                     <span className="flex-1 leading-relaxed">{activity}</span>
                   </motion.div>
                 ))}
@@ -133,14 +133,14 @@ export const Contact = () => {
             <motion.div
               whileHover={{ y: -3 }}
               transition={{ duration: 0.3 }}
-              className="bg-[#0f0f1e] rounded-xl p-6 shadow-2xl relative z-30"
+              className="bg-[#18181B] rounded-2xl p-6 border border-[#3F3F46] relative z-30"
             >
               {/* Primary CTA - Schedule a Meeting */}
               <motion.button
                 onClick={handleScheduleMeeting}
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
-                className="w-full flex items-center justify-center gap-2.5 py-3 md:py-3 px-8 md:px-8 button-primary text-center text-white cursor-pointer rounded-lg bg-[#5b21b6] hover:bg-[#6d28d9] transition-all font-semibold shadow-lg hover:shadow-purple-500/50 text-base md:text-base mb-4"
+                className="w-full flex items-center justify-center gap-2.5 py-3 px-8 button-primary text-center cursor-pointer rounded-lg font-semibold text-sm tracking-wide mb-4"
               >
                 <RxCalendar className="text-lg" />
                 Schedule a Meeting
@@ -148,9 +148,9 @@ export const Contact = () => {
 
               {/* Divider */}
               <div className="flex items-center gap-3 mb-5">
-                <div className="flex-1 h-px bg-gray-700/60" />
-                <span className="text-gray-500 text-xs font-medium">OR</span>
-                <div className="flex-1 h-px bg-gray-700/60" />
+                <div className="flex-1 h-px bg-[#3F3F46]" />
+                <span className="text-[#52525B] text-xs font-medium">OR</span>
+                <div className="flex-1 h-px bg-[#3F3F46]" />
               </div>
 
               {/* Contact Form */}
@@ -170,9 +170,9 @@ export const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="Full name"
-                  className="w-full bg-[#0a0a14] border border-gray-900/60 rounded-lg px-4 py-3 text-sm text-white
-                           placeholder:text-gray-500 focus:outline-none
-                           transition-all duration-300"
+                  className="w-full bg-[#18181B] border border-[#3F3F46] rounded-lg px-4 py-3 text-sm text-[#FAFAFA]
+                           placeholder:text-[#52525B] focus:outline-none focus:border-[#D4D4D8]
+                           transition-all duration-200"
                 />
 
                 {/* Email */}
@@ -183,9 +183,9 @@ export const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="Email"
-                  className="w-full bg-[#0a0a14] border border-gray-900/60 rounded-lg px-4 py-3 text-sm text-white
-                           placeholder:text-gray-500 focus:outline-none
-                           transition-all duration-300"
+                  className="w-full bg-[#18181B] border border-[#3F3F46] rounded-lg px-4 py-3 text-sm text-[#FAFAFA]
+                           placeholder:text-[#52525B] focus:outline-none focus:border-[#D4D4D8]
+                           transition-all duration-200"
                 />
 
                 {/* Message */}
@@ -196,9 +196,9 @@ export const Contact = () => {
                   required
                   rows={4}
                   placeholder="Message"
-                  className="w-full bg-[#0a0a14] border border-gray-900/60 rounded-lg px-4 py-3 text-sm text-white
-                           placeholder:text-gray-500 focus:outline-none
-                           transition-all duration-300 resize-none"
+                  className="w-full bg-[#18181B] border border-[#3F3F46] rounded-lg px-4 py-3 text-sm text-[#FAFAFA]
+                           placeholder:text-[#52525B] focus:outline-none focus:border-[#D4D4D8]
+                           transition-all duration-200 resize-none"
                 />
 
                 {/* Submit Button */}
@@ -206,7 +206,7 @@ export const Contact = () => {
                   type="submit"
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
-                  className="w-full py-3 md:py-3 px-8 md:px-8 button-primary text-center text-white cursor-pointer rounded-lg bg-[#5b21b6] hover:bg-[#6d28d9] transition-all font-semibold shadow-lg hover:shadow-purple-500/50 text-base md:text-base uppercase tracking-wide"
+                  className="w-full py-3 px-8 button-primary text-center cursor-pointer rounded-lg font-semibold text-sm tracking-widest uppercase"
                 >
                   SEND
                 </motion.button>
@@ -222,7 +222,7 @@ export const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
-          className="fixed bottom-6 right-6 bg-purple-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 flex items-center gap-2"
+          className="fixed bottom-6 right-6 bg-[#18181B] border border-[#3F3F46] text-[#FAFAFA] px-6 py-3 rounded-lg shadow-lg z-50 flex items-center gap-2"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -237,7 +237,7 @@ export const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
-          className="fixed bottom-6 right-6 bg-cyan-600 text-white px-6 py-3 rounded-lg shadow-lg z-50"
+          className="fixed bottom-6 right-6 bg-[#18181B] border border-[#3F3F46] text-[#D4D4D8] px-6 py-3 rounded-lg shadow-lg z-50"
         >
           Calendar opened in a new tab.
         </motion.div>

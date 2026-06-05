@@ -10,7 +10,7 @@ type SkillProps = {
   width: number;
   height: number;
   index: number;
-  color?: string; // glow color
+  color?: string; // rgb glow color
 };
 
 export const SkillDataProvider = ({
@@ -19,7 +19,7 @@ export const SkillDataProvider = ({
   width,
   height,
   index,
-  color = "168,85,247", // default purple glow
+  color = "168,85,247", // default purple
 }: SkillProps) => {
   const [active, setActive] = useState(false);
 
@@ -27,20 +27,21 @@ export const SkillDataProvider = ({
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.05 }}
-      className="relative flex flex-col items-center overflow-visible"
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ delay: index * 0.05, duration: 0.4 }}
+      className="relative flex flex-col items-center justify-center overflow-visible"
     >
-      {/* Tooltip */}
+      {/* Premium Glassmorphism Tooltip */}
       <motion.span
-        initial={{ opacity: 0, y: 8 }}
-        animate={active ? { opacity: 1, y: 0 } : { opacity: 0, y: 8 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        initial={{ opacity: 0, y: 10 }}
+        animate={active ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
         className="
-          absolute -top-10 z-50
-          bg-black/70 backdrop-blur-md
-          text-white text-xs font-medium
-          px-2 py-1 rounded-md
+          absolute -top-12 z-[100]
+          bg-[#18181B]/80 backdrop-blur-md
+          border border-[#3F3F46] shadow-xl
+          text-[#FAFAFA] text-xs font-semibold
+          px-3 py-1.5 rounded-lg
           pointer-events-none
           whitespace-nowrap
         "
@@ -50,17 +51,17 @@ export const SkillDataProvider = ({
 
       {/* Icon */}
       <motion.div
-        whileHover={{ scale: 1.15 }}
-        whileTap={{ scale: 1.1 }}
-        transition={{ type: "spring", stiffness: 300, damping: 15 }}
+        whileHover={{ scale: 1.08 }}
+        whileTap={{ scale: 1.05 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
         onHoverStart={() => setActive(true)}
         onHoverEnd={() => setActive(false)}
         onClick={() => setActive((prev) => !prev)} // mobile tap
-        className="cursor-pointer"
+        className="cursor-pointer relative z-10 flex items-center justify-center p-2 rounded-xl transition-all duration-300"
         style={{
           filter: active
-            ? `drop-shadow(0 0 14px rgba(${color},0.7))`
-            : "none",
+            ? `drop-shadow(0 0 16px rgba(${color}, 0.5))`
+            : "drop-shadow(0 0 0px rgba(0,0,0,0))",
         }}
       >
         <Image
@@ -69,6 +70,7 @@ export const SkillDataProvider = ({
           width={width}
           height={height}
           draggable={false}
+          className="object-contain"
         />
       </motion.div>
     </motion.div>

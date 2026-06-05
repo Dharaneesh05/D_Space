@@ -14,19 +14,9 @@ export const Footer = () => {
   return (
     <footer className="w-full backdrop-blur-md bg-[#03001417] bg-transparent
      text-white relative pt-48 pb-6 mt-[-100px] overflow-hidden">
-      {/* Black Hole Video Background - Bottom half only, positioned under navigation */}
-      <video
-        autoPlay
-        muted
-        loop
-        className="absolute top-0 left-0 w-full h-[100vh] object-cover -z-10 opacity-80"
-      >
-        <source src="/videos/blackhole.webm" type="video/webm" />
-      </video>
-      
       <div className="max-w-7xl mx-auto px-5 relative z-10">
         {/* Separator Line */}
-        <div className="w-full h-px bg-white/10 mb-6" />
+        <div className="w-full h-px bg-[#3F3F46] mb-6" />
         
         {/* Navigation Links */}
         <div className="flex flex-wrap justify-center gap-12 md:gap-16">
@@ -34,7 +24,7 @@ export const Footer = () => {
             <Link
               key={link.name}
               href={link.href}
-              className="text-gray-400 hover:text-white text-lg font-semibold uppercase tracking-wider transition-colors duration-300"
+              className="text-[#52525B] hover:text-[#FAFAFA] text-sm font-medium uppercase tracking-widest transition-colors duration-200"
             >
               {link.name}
             </Link>
