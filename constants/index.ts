@@ -260,9 +260,9 @@ export const OTHER_SKILL = [
 export const PROJECTS = [
   {
     id: 1,
-    title: "Resume Analyzer & Builder",
+    title: "SkillSync",
     description:
-      "A comprehensive AI-powered platform for resume analysis and intelligent resume building. It delivers ATS scoring, predictive insights, and personalized job suggestions based on user profiles.",
+      "An AI-powered platform for resume analysis and intelligent resume building. Delivers ATS scoring, predictive insights, and personalized job suggestions.",
     fullDescription:
       "A comprehensive AI-powered platform for resume analysis and intelligent resume building. It delivers ATS scoring, predictive insights, and personalized job suggestions based on user profiles. Integrated analytics and job search features provide actionable guidance for career growth.",
     image: "/resume-analyzer.png",
@@ -272,15 +272,15 @@ export const PROJECTS = [
   },
   {
     id: 2,
-    title: "Personal Portfolio Website",
+    title: "IMBS",
     description:
-      "A full-stack portfolio showcasing projects and skills with an AI-powered chatbot for interactive user engagement. Features dynamic content rendering, theme switching, and seamless navigation.",
+      "A full-stack inventory and billing management system designed for jewelry businesses to streamline stock tracking, sales operations, and user management. Features secure authentication, real-time inventory monitoring, and billing workflows.",
     fullDescription:
-      "A full-stack portfolio showcasing projects and skills with an AI-powered chatbot for interactive user engagement. Features dynamic content rendering, theme switching, and seamless navigation for a responsive, modern experience.",
-    image: "/portfolio.png",
-    tech: ["Next.js", "React", "Node.js", "MongoDB", "Tailwind CSS"],
-    demo: "https://portfolio-3tk8.vercel.app/",
-    github: "https://github.com/Dharaneesh05/PortVia",
+      "A full-stack inventory and billing management system designed for jewelry businesses to streamline stock tracking, sales operations, and user management. Features secure authentication, real-time inventory monitoring, billing workflows, role-based access control, and live stock notifications.",
+    image: "/imbs.png",
+    tech: ["React.js", "Node.js", "Express.js", "MySQL", "Socket.IO", "JWT Auth"],
+    demo: "https://imbs-ten.vercel.app/",
+    github: "https://github.com/Dharaneesh05/IMBS",
   },
   {
     id: 3,
@@ -298,11 +298,11 @@ export const PROJECTS = [
     id: 4,
     title: "PitchPoint",
     description:
-      "A data-driven analytics platform for evaluating Test cricket performance using the Duckworth–Lewis method. Delivers real-time insights, predictive impact analysis, and interactive visualizations.",
+      "A cricket analytics platform delivering real-time match insights, player performance tracking, and data-driven team analysis. Features role-based dashboards, interactive visualizations, and ML-powered predictions for coaches, analysts, and fans.",
     fullDescription:
-      "A data-driven analytics platform for evaluating Test cricket performance using the Duckworth–Lewis method. Delivers real-time insights, predictive impact analysis, and interactive visualizations through a responsive, scalable architecture.",
+      "A cricket analytics platform delivering real-time match insights, player performance tracking, and data-driven team analysis. Features role-based dashboards, interactive visualizations, and ML-powered predictions for coaches, analysts, and fans.",
     image: "/pitchpoint.png",
-    tech: ["React", "Node.js", "MongoDB", "Data Analytics", "Statistical Modeling", "Interactive Charts"],
+    tech: ["React", "TypeScript", "Node.js", "MongoDB", "PostgreSQL", "Python"],
     demo: "https://pitch-point-eight.vercel.app/",
     github: "https://github.com/Dharaneesh05/PitchPoint",
   },
@@ -310,11 +310,11 @@ export const PROJECTS = [
     id: 5,
     title: "CineFellas",
     description:
-      "A full-stack movie recommendation platform delivering mood-based and multilingual suggestions across 10 genres. Leverages AI-driven content analysis with an intuitive UI to personalize discovery.",
+      "A full-stack movie recommendation platform delivering personalized suggestions based on user preferences. Features secure authentication, wishlist management, and intelligent discovery through a modern UI.",
     fullDescription:
-      "A full-stack movie recommendation platform delivering mood-based and multilingual suggestions across 10 genres. Leverages AI-driven content analysis with an intuitive UI to personalize discovery and enhance user engagement.",
+      "A full-stack movie recommendation platform delivering personalized suggestions based on user preferences. Features secure authentication, wishlist management, and intelligent discovery through a modern UI.",
     image: "/cinefellas.png",
-    tech: ["React", "Node.js", "Multilingual Support", "Content Analysis"],
+    tech: ["Next.js", "React", "Express.js", "MongoDB", "JWT Auth", "Tailwind CSS"],
     demo: "https://movierecommend.vercel.app/",
     github: "https://github.com/Dharaneesh05/Movie-Recommendation-System-",
   },
@@ -420,25 +420,28 @@ export const EXPERIENCE_DATA = [
 
 export const CERTIFICATIONS = [
   {
-    id: 1,
-    title: "MongoDB Certified Developer",
-    issuer: "MongoDB University",
-    date: "May 2025",
-    certificateUrl: "/mongodb.pdf",
+    id: 3,
+    title: "Oracle JAVA SE17 Developer",
+    issuer: "Oracle University",
+    date: "Feb 2026",
+    description: "Certified in Java SE 17 development with expertise in object-oriented programming, collections framework, and modern Java features.",
+    certificateUrl: "/se17.pdf",
   },
   {
     id: 2,
     title: "NVIDIA AI Fundamentals",
     issuer: "NVIDIA Deep Learning Institute",
     date: "Oct 2025",
+    description: "Certified in the fundamentals of artificial intelligence, deep learning workflows, and GPU-accelerated computing.",
     certificateUrl: "/nvidia.pdf",
   },
   {
-    id: 3,
-    title: "Oracle APEX Cloud Developer",
-    issuer: "Oracle University",
+    id: 1,
+    title: "MongoDB Certified Developer",
+    issuer: "MongoDB University",
     date: "May 2025",
-    certificateUrl: "/oracle.pdf",
+    description: "Certified in MongoDB database design, aggregation pipelines, indexing, replication, and production deployment.",
+    certificateUrl: "/mongodb.pdf",
   },
 ] as const;
 

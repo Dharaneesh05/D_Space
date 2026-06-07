@@ -4,6 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { slideInFromTop } from "@/lib/motion";
 
+function scrollTo(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const heading = (el.querySelector('h1, h2, h3') as HTMLElement | null) ?? el;
+  const top = heading.getBoundingClientRect().top + window.scrollY - 65 - 10;
+  window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+}
+
 /* ── Roles that cycle beneath the name ─────────────────────────────── */
 const ROLES = [
   "Full-Stack Developer",
@@ -37,7 +45,7 @@ export const HeroContent = () => {
   return (
     <>
       {/* ── Hero Shell ─────────────────────────────────────────────── */}
-      <section className="relative w-full min-h-[calc(100vh-65px)] flex items-center justify-center px-5">
+      <section aria-label="Hero Introduction" className="relative w-full min-h-[calc(100vh-65px)] flex items-center justify-center px-5">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -91,7 +99,7 @@ export const HeroContent = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
+                transition={{ duration: 0.24, ease: "easeInOut" }}
                 className="block font-bold text-[#D4D4D8]"
                 style={{ fontSize: "clamp(1.3rem, 2vw, 2rem)" }}
               >
@@ -115,12 +123,12 @@ export const HeroContent = () => {
             </button>
 
             {/* Secondary — Get In Touch */}
-            <a
-              href="#contact"
+            <button
+              onClick={() => scrollTo('contact')}
               className="py-3 px-8 text-center text-[#FAFAFA] cursor-pointer rounded-lg font-semibold text-sm tracking-wide border border-[#3F3F46] hover:border-[#52525B] hover:bg-white/[0.03] transition-all duration-200 min-w-[160px]"
             >
               Get In Touch
-            </a>
+            </button>
           </motion.div>
 
         </motion.div>
@@ -131,6 +139,9 @@ export const HeroContent = () => {
         <div
           className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4"
           onClick={() => setShowPDF(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Resume Document Viewer"
         >
           <div
             className="relative w-full max-w-5xl h-[90vh] bg-white rounded-lg overflow-hidden shadow-2xl"
@@ -139,6 +150,7 @@ export const HeroContent = () => {
             <button
               onClick={() => setShowPDF(false)}
               className="absolute top-4 right-4 z-10 bg-[#18181B] hover:bg-[#27272A] border border-[#3F3F46] text-[#FAFAFA] rounded-full w-10 h-10 flex items-center justify-center shadow-lg transition-all font-bold text-xl"
+              aria-label="Close Resume"
               title="Close"
             >
               ✕

@@ -9,7 +9,7 @@ import { Footer } from "@/components/main/footer";
 export default function Home() {
   return (
     <main className="h-full w-full">
-      <div className="flex flex-col gap-20">
+      <div className="flex flex-col gap-0">
         <Hero />
         <About />
         <Skills />
